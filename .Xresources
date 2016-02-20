@@ -1,8 +1,8 @@
-xterm*font: terminus-14
-xterm*loginShell: true
-xterm*saveLines: 2000
-xterm*termName: xterm-256color
-xterm*eightBitInput: false
+xterm*faceName:        Terminus:style=Regular:size=14
+xterm*loginShell:      true
+xterm*saveLines:       2000
+xterm*termName:        xterm-256color
+xterm*eightBitInput:   false
 xterm*ptyInitialErase: true
 
 
