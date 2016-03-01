@@ -16,8 +16,6 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda";
 
-  swapDevices = [ { device = "/dev/sda5"; } ];
-
   networking.hostName = "nexus"; # Define your hostname.
 
   # Select internationalisation properties.
@@ -33,14 +31,12 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    vimHugeX sudo
+    vimHugeX
     gitAndTools.gitFull
-    tmux
+    tmux xclip
     dmenu
     firefoxWrapper
     silver-searcher
-    xclip
-    terminus_font
     ghc cabal-install
   ];
 
@@ -90,6 +86,4 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "15.09";
-  
-  virtualisation.virtualbox.guest.enable = true;
 }
