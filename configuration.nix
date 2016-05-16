@@ -19,7 +19,7 @@
   environment.systemPackages = with pkgs; [
     tmux xclip
     xterm
-    ghc stack
+    ghc stack binutils
     firefoxWrapper
   ];
 
