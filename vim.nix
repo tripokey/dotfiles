@@ -4,6 +4,13 @@
   imports = [ ];
 
   environment.systemPackages = with pkgs; [
-    (import ./vim) ctags silver-searcher fzf zsh
+    (import ./vim)
+    ctags
+    silver-searcher
+    fzf
+    zsh
+    haskellPackages.ghc-mod
+    haskellPackages.hlint
+    haskellPackages.hdevtools
   ];
 }

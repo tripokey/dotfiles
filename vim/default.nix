@@ -20,6 +20,10 @@ let
         "fzf.vim"
         "trailing-whitespace"
         "YouCompleteMe"
+        "vimproc"
+        "ghc-mod-vim"
+        "neco-ghc"
+        "neomake"
         #"color_coded"
         ];
       }

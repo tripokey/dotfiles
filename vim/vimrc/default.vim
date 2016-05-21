@@ -16,3 +16,16 @@ set relativenumber
 colorscheme solarized
 set background=dark
 " set term=screen-256color
+
+" Haskell
+
+" Disable haskell-vim omnifunc
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+augroup NeomakeHaskell
+  autocmd!
+  autocmd! BufWritePost *.hs Neomake
+augroup END
