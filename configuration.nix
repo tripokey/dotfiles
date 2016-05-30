@@ -21,6 +21,7 @@
     xterm
     ghc stack binutils
     firefoxWrapper
+    nix-repl
   ];
 
   services.xserver = {
