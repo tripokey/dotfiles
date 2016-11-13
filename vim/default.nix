@@ -24,6 +24,7 @@ let
         "ghc-mod-vim"
         "neco-ghc"
         "neomake"
+        "table-mode"
         #"color_coded"
         ];
       }
