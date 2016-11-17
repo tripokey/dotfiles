@@ -22,6 +22,7 @@
     ghc stack binutils
     firefoxWrapper
     nix-repl
+    direnv
   ];
 
   services.xserver = {
