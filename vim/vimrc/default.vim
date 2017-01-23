@@ -5,6 +5,7 @@ endif
 " Key bindings
 set pastetoggle=<F2>
 nnoremap <C-p> :FZF <cr>
+nnoremap <Leader>] :YcmCompleter GoTo<CR>
 
 " User settings
 set expandtab

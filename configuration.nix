@@ -23,6 +23,7 @@
     firefoxWrapper
     nix-repl
     direnv
+    rustracerd
   ];
 
   services.xserver = {

@@ -25,6 +25,7 @@ let
         "neco-ghc"
         "neomake"
         "table-mode"
+        "rust-vim"
         #"color_coded"
         ];
       }
