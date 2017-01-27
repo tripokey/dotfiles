@@ -1,20 +1,16 @@
-{ config, lib, pkgs, ... }:
+{ user, homeDir, dotfiles }:
 
 {
-  imports = [ ];
+  text = ''
+    ln -sfn ${dotfiles}/.gitconfig ${homeDir}/.gitconfig
+    ln -sfn ${dotfiles}/.Xresources ${homeDir}/.Xresources
+    ln -sfn ${dotfiles}/.tmux.conf ${homeDir}/.tmux.conf
+    ln -sfn ${dotfiles}/.xmonad ${homeDir}/.xmonad
 
-  system.activationScripts = { dotfiles = {
-      text = ''
-        ln -sfn /home/tripokey/dotfiles/.gitconfig /home/tripokey/.gitconfig
-        ln -sfn /home/tripokey/dotfiles/.Xresources /home/tripokey/.Xresources
-        ln -sfn /home/tripokey/dotfiles/.tmux.conf /home/tripokey/.tmux.conf
-        ln -sfn /home/tripokey/dotfiles/.xmonad /home/tripokey/.xmonad
+    mkdir -p ${homeDir}/.stack
+    chown ${user} ${homeDir}/.stack
+    ln -sfn ${dotfiles}/stack.yaml ${homeDir}/.stack/config.yaml
+  '';
 
-        mkdir -p /home/tripokey/.stack
-        chown tripokey /home/tripokey/.stack
-        ln -sfn /home/tripokey/dotfiles/stack.yaml /home/tripokey/.stack/config.yaml
-      '';
-      deps = [];
-    };
-  };
+  deps = [];
 }

@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
+let
+  user = "tripokey";
+  homeDir = "/home/${user}";
+  dotfiles = ./.;
+in
 {
   imports =
     [
@@ -9,7 +14,6 @@
       ./xmonad.nix
       ./common.nix
       ./vim.nix
-      ./dotfiles.nix
     ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -29,18 +33,24 @@
   services.xserver = {
     displayManager = {
       slim = {
-        defaultUser = "tripokey";
+        defaultUser = "${user}";
         autoLogin = true;
       };
     };
   };
 
-  users.extraUsers.tripokey = {
+  users.extraUsers."${user}" = {
     createHome = true;
-    home = "/home/tripokey";
+    home = "${homeDir}";
     description = "Michael Leandersson";
     extraGroups = [ "wheel" "disk" "vboxusers" "cdrom" ];
     isSystemUser = false;
     useDefaultShell = true;
   };
+
+  system.activationScripts.dotfiles = (import ./dotfiles.nix {
+    user = "${user}";
+    homeDir = "${homeDir}";
+    dotfiles = "${dotfiles}";
+  });
 }
