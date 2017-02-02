@@ -1,11 +1,12 @@
 with import <nixpkgs> {};
 
+{extraPlugins ? [ ], extraVimrc ? "" }:
 let
   vimrc = builtins.readFile ./vimrc/default.vim;
-  vimrcAdaptation = builtins.readFile ./vimrc/adaptation.vim;
   plugins = callPackage ./plugins.nix {};
   rc = ''
   ${vimrc}
+  ${extraVimrc}
     '';
   vamConfig = {
     knownPlugins = pkgs.vimPlugins // plugins;
@@ -20,14 +21,8 @@ let
         "fzfWrapper"
         "trailing-whitespace"
         "YouCompleteMe"
-        "vimproc"
-        "ghc-mod-vim"
-        "neco-ghc"
         "neomake"
-        "table-mode"
-        "rust-vim"
-        #"color_coded"
-        ];
+        ] ++ extraPlugins;
       }
     ];
   };
@@ -45,7 +40,16 @@ let
     };
   };
 in
-lib.overrideDerivation custom_neovim (o: {
-    ftNixSupport             = true;
-    #luaSupport              = true;
-    })
+pkgs.buildEnv {
+  name = "custom_vim";
+
+  paths = [
+    (lib.overrideDerivation custom_neovim (o: {
+      ftNixSupport             = true;
+    }))
+    ctags
+    silver-searcher
+    fzf
+    zsh
+  ];
+}

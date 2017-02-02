@@ -3,17 +3,15 @@
 let
   user = "tripokey";
   homeDir = "/home/${user}";
-  dotfiles = ./.;
 in
 {
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      ./layoutSwitcher.nix
-      ./fish.nix
-      ./xmonad.nix
-      ./common.nix
-      ./vim.nix
+      ./modules/layoutSwitcher.nix
+      ./modules/fish.nix
+      ./modules/xmonad.nix
+      ./modules/common.nix
     ];
 
   boot.loader.grub.device = "/dev/sda";
@@ -21,13 +19,12 @@ in
   networking.hostName = "nexus";
 
   environment.systemPackages = with pkgs; [
-    tmux xclip
-    xterm
-    ghc stack binutils
-    firefoxWrapper
+    gitAndTools.gitFull unzip manpages
+    tmux xclip xterm
+    firefoxWrapper (import ./pkgs/tvim)
     nix-repl
     direnv
-    rustracerd
+    (import ./pkgs/vim {})
   ];
 
   services.xserver = {
@@ -47,10 +44,4 @@ in
     isSystemUser = false;
     useDefaultShell = true;
   };
-
-  system.activationScripts.dotfiles = (import ./dotfiles.nix {
-    user = "${user}";
-    homeDir = "${homeDir}";
-    dotfiles = "${dotfiles}";
-  });
 }
