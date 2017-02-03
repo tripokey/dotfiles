@@ -4,7 +4,7 @@ pkgs.buildEnv {
   name = "rust-env";
 
   paths = with pkgs; [
-    rustc rustfmt cargo rustracer
+    rustc rustfmt cargo rustracerd
     (import ./vim { extraPlugins = [ "rust-vim" ]; })
   ];
 }
