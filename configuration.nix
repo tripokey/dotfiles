@@ -19,7 +19,8 @@ in
   networking.hostName = "nexus";
 
   environment.systemPackages = with pkgs; [
-    gitAndTools.gitFull unzip manpages
+    gitAndTools.gitFull unzip
+    manpages tldr
     tmux xclip xterm
     firefoxWrapper (import ./pkgs/tvim)
     nix-repl
