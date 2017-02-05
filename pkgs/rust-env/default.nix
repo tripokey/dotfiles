@@ -5,6 +5,9 @@ pkgs.buildEnv {
 
   paths = with pkgs; [
     rustc rustfmt cargo rustracerd
-    (import ./vim { extraPlugins = [ "rust-vim" ]; })
+    (import ../vim {
+      extraPlugins = [ "rust-vim" ];
+      extraVimrc = builtins.readFile ./rust.vim;
+    })
   ];
 }
