@@ -7,7 +7,8 @@ pkgs.buildEnv {
     rustc rustfmt cargo rustracerd
     (import ../vim {
       extraPlugins = [ "rust-vim" ];
-      extraVimrc = builtins.readFile ./rust.vim;
+      extraVimrc = (builtins.readFile ./rust.vim) +
+        "let g:ycm_rust_src_path = '${rustc.src}/src'";
     })
   ];
 }
