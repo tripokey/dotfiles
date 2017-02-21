@@ -6,6 +6,9 @@ endif
 set pastetoggle=<F2>
 nnoremap <C-p> :FZF <cr>
 nnoremap <Leader>] :YcmCompleter GoTo<CR>
+nnoremap <Leader>t :YcmCompleter GetType<CR>
+nnoremap <Leader>f :YcmCompleter FixIt<CR>
+nnoremap <Leader>h :YcmCompleter GetDoc<CR>
 
 " User settings
 set expandtab
