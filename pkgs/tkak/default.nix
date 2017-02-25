@@ -1,17 +1,17 @@
 with import <nixpkgs> { };
 
 stdenv.mkDerivation {
-  name = "tvim";
+  name = "tkak";
 
   src = ./.;
 
   buildCommand = ''
     mkdir -p $out/bin
-    cat <<EOF >$out/bin/tvim
+    cat <<EOF >$out/bin/tkak
     #!${bash}/bin/bash
     PATH=${stdenv.lib.makeSearchPath "bin" [tmux]}:\$PATH
     EOF
-    cat $src/tvim >>$out/bin/tvim
-    chmod +x $out/bin/tvim
+    cat $src/tkak >>$out/bin/tkak
+    chmod +x $out/bin/tkak
   '';
 }

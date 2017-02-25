@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-./setup.fish
+./setup.sh
 sudo nixos-rebuild switch
 ```
 

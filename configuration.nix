@@ -3,6 +3,7 @@
 let
   user = "tripokey";
   homeDir = "/home/${user}";
+  unstable = import ./unstable.nix;
 in
 {
   imports =
@@ -10,7 +11,7 @@ in
       /etc/nixos/hardware-configuration.nix
       ./modules/layoutSwitcher.nix
       ./modules/fish.nix
-      ./modules/xmonad.nix
+      ./modules/i3.nix
       ./modules/common.nix
     ];
 
@@ -21,12 +22,20 @@ in
   environment.systemPackages = with pkgs; [
     gitAndTools.gitFull unzip
     manpages tldr
-    tmux xclip xterm
-    firefoxWrapper (import ./pkgs/tvim)
+    xclip xterm
+    firefoxWrapper (import ./pkgs/tkak)
     nix-repl
     direnv
     (import ./pkgs/vim {})
-  ];
+    (import ./pkgs/tml { pkgs = unstable.pkgs; })
+    indent
+  ] ++ (with unstable.pkgs; [
+    kakoune
+    ranger
+    ripgrep
+    ycmd
+    fzf
+  ]);
 
   services.xserver = {
     displayManager = {
@@ -44,5 +53,12 @@ in
     extraGroups = [ "wheel" "disk" "vboxusers" "cdrom" ];
     isSystemUser = false;
     useDefaultShell = true;
+  };
+
+  environment.variables.EDITOR = "kak";
+
+  programs.tmux = {
+    enable = true;
+    extraTmuxConf = builtins.readFile ./cfg/.tmux.conf;
   };
 }

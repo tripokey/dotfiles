@@ -7,6 +7,6 @@
 	branch = auto
 	interactive = auto
 [core]
-	editor = vim
+	editor = kak
 [merge]
-  tool = vimdiff
+        tool = vimdiff

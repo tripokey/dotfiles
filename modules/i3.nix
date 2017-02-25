@@ -4,14 +4,12 @@
   imports = [ ];
 
   environment.systemPackages = with pkgs; [
-    dmenu
   ];
 
   services.xserver = {
     enable = true;
-    windowManager.xmonad.enable = true;
-    windowManager.xmonad.enableContribAndExtras = true;
-    windowManager.default = "xmonad";
+    windowManager.i3.enable = true;
+    windowManager.default = "i3";
     desktopManager.xterm.enable = false;
     desktopManager.default = "none";
     displayManager = {
