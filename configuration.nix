@@ -34,7 +34,6 @@ in
     ranger
     ripgrep
     ycmd
-    fzf
   ]);
 
   services.xserver = {
