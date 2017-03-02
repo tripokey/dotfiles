@@ -10,7 +10,7 @@ in
     [
       /etc/nixos/hardware-configuration.nix
       ./modules/layoutSwitcher.nix
-      ./modules/fish.nix
+      ./modules/zsh.nix
       ./modules/i3.nix
       ./modules/common.nix
     ];
@@ -25,7 +25,6 @@ in
     xclip xterm
     firefoxWrapper (import ./pkgs/tkak)
     nix-repl
-    direnv
     (import ./pkgs/vim {})
     (import ./pkgs/tml { pkgs = unstable.pkgs; })
     indent
@@ -34,6 +33,7 @@ in
     ranger
     ripgrep
     ycmd
+    cargo rustc rustfmt rustracer rustracerd
   ]);
 
   services.xserver = {
