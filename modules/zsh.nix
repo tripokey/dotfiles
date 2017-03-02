@@ -46,9 +46,16 @@ in
       alias ssh='TERM=xterm ssh'
       alias tmux='tmux -2'
 
+      source ${zsh-autosuggestions}/zsh-autosuggestions.zsh
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+
       source ${zsh-syntax-highlighting}/zsh-syntax-highlighting.zsh
-      # TODO setup: source ${zsh-autosuggestions}/zsh-autosuggestions.zsh
-      # TODO setup: source ${zsh-history-substring-search}/zsh-history-substring-search.zsh
+
+      source ${zsh-history-substring-search}/zsh-history-substring-search.zsh
+      bindkey "''${key[Up]}" history-substring-search-up
+      bindkey "''${key[Down]}" history-substring-search-down
+      bindkey -M vicmd 'k' history-substring-search-up
+      bindkey -M vicmd 'j' history-substring-search-down
     '';
     promptInit = "";
   };
