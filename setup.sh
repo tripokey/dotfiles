@@ -11,3 +11,4 @@ tml -f "$PWD"/cfg/.Xresources "$HOME"/.Xresources
 tml -f "$PWD"/cfg/config.nix "$HOME"/.nixpkgs/config.nix
 tml -f "$PWD"/cfg/.vimperatorrc "$HOME"/.vimperatorrc
 tml -f "$PWD"/cfg/kakrc "$HOME"/.config/kak/kakrc
+echo "" > "$HOME"/.zshrc

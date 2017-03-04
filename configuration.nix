@@ -3,7 +3,7 @@
 let
   user = "tripokey";
   homeDir = "/home/${user}";
-  unstable = import ./unstable.nix;
+  unstable = import ./unstable.nix {};
 in
 {
   imports =

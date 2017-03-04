@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  unstable = import ../unstable.nix;
+  unstable = import ../unstable.nix {};
 
   zsh-syntax-highlighting = pkgs.fetchFromGitHub {
     owner = "zsh-users";
@@ -45,6 +45,8 @@ in
 
       alias ssh='TERM=xterm ssh'
       alias tmux='tmux -2'
+      alias ns='nix-shell --command zsh'
+      alias nsu='nix-shell --command zsh -I stable=${builtins.toString <nixpkgs>} -I nixpkgs=${../unstable.nix}'
 
       source ${zsh-autosuggestions}/zsh-autosuggestions.zsh
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'

@@ -5,6 +5,6 @@ stdenv.mkDerivation {
 
   buildInputs = [
     bash
-    (import ./pkgs/tml { pkgs = import ./unstable.nix; })
+    (import ./pkgs/tml { pkgs = import ./unstable.nix {}; })
   ];
 }
