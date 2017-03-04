@@ -4,6 +4,7 @@ let
   user = "tripokey";
   homeDir = "/home/${user}";
   unstable = import ./unstable.nix {};
+  work = ../work/default.nix;
 in
 {
   imports =
@@ -13,7 +14,7 @@ in
       ./modules/zsh.nix
       ./modules/i3.nix
       ./modules/common.nix
-    ];
+    ] ++ (if builtins.pathExists work then [ work ] else []);
 
   boot.loader.grub.device = "/dev/sda";
 
