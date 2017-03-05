@@ -5,6 +5,16 @@ let
   homeDir = "/home/${user}";
   unstable = import ./unstable.nix {};
   work = ../work/default.nix;
+  kakoune = unstable.pkgs.kakoune.overrideDerivation (oldAttrs: rec {
+    name = "kakoune-nightly-${version}";
+    version = "2017-03-04";
+    src = pkgs.fetchFromGitHub {
+      repo = "kakoune";
+      owner = "mawww";
+      rev = "cc88b0f5861254cd9a95e7289f843e68fb7edbc1";
+      sha256 = "1iwlyn3s6h7q7wvy0r9v4z61dw2wd2bfwy5vk5v62g3vb7g4igjy";
+    };
+  });
 in
 {
   imports =
@@ -26,7 +36,6 @@ in
     xclip xterm
     firefoxWrapper (import ./pkgs/tkak)
     nix-repl
-    (import ./pkgs/vim {})
     (import ./pkgs/tml { pkgs = unstable.pkgs; })
     indent
   ] ++ (with unstable.pkgs; [

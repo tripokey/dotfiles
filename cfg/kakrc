@@ -3,3 +3,10 @@ decl str grepcmd 'rg --column'
 def find -params 1 -shell-candidates %{ find . -type f } %{ edit %arg{1} }
 
 def git-edit -params 1 -shell-candidates %{ git ls-files } %{ edit %arg{1} }
+
+hook global WinSetOption filetype=(rust) %{
+    racer-enable-autocomplete
+    set global makecmd 'cargo build'
+}
+
+colorscheme solarized
