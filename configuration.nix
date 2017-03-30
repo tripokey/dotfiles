@@ -33,7 +33,7 @@ in
   environment.systemPackages = with pkgs; [
     gitAndTools.gitFull unzip
     manpages tldr
-    xclip xterm
+    xsel xterm
     firefoxWrapper (import ./pkgs/tkak)
     nix-repl
     indent
