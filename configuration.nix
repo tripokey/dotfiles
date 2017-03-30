@@ -36,7 +36,6 @@ in
     xclip xterm
     firefoxWrapper (import ./pkgs/tkak)
     nix-repl
-    (import ./pkgs/tml { pkgs = unstable.pkgs; })
     indent
   ] ++ (with unstable.pkgs; [
     kakoune
