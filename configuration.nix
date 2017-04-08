@@ -7,12 +7,12 @@ let
   work = ../work/default.nix;
   kakoune = unstable.pkgs.kakoune.overrideDerivation (oldAttrs: rec {
     name = "kakoune-nightly-${version}";
-    version = "2017-03-04";
+    version = "2017-04-06";
     src = pkgs.fetchFromGitHub {
       repo = "kakoune";
       owner = "mawww";
-      rev = "cc88b0f5861254cd9a95e7289f843e68fb7edbc1";
-      sha256 = "1iwlyn3s6h7q7wvy0r9v4z61dw2wd2bfwy5vk5v62g3vb7g4igjy";
+      rev = "79faae854614f56947c78f71d4d502bfd906900e";
+      sha256 = "0pk30jhvwnwiligh781454qnyszbn17xy13dyzzxp124d9vvkqxn";
     };
   });
 in
