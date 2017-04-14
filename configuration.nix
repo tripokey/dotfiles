@@ -41,8 +41,6 @@ in
     kakoune
     ranger
     ripgrep
-    ycmd
-    cargo rustc rustfmt rustracer rustracerd
   ]);
 
   services.xserver = {
