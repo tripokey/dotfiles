@@ -47,7 +47,6 @@ in
     displayManager = {
       slim = {
         defaultUser = "${user}";
-        autoLogin = true;
       };
     };
   };
