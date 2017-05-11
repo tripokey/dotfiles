@@ -46,6 +46,7 @@ in
       alias ssh='TERM=xterm ssh'
       alias tmux='tmux -2'
       alias ns='nix-shell --command zsh'
+      alias pns='nix-shell --indirect --add-root $HOME/.gcroots/dep --command zsh'
       alias nsu='nix-shell --command zsh -I stable=${builtins.toString <nixpkgs>} -I nixpkgs=${../unstable.nix}'
 
       source ${zsh-autosuggestions}/zsh-autosuggestions.zsh
