@@ -5,6 +5,6 @@ in
 import (pkgs.fetchFromGitHub {
   owner = "NixOS";
   repo = "nixpkgs-channels";
-  rev = "4610fc9310947cfea56c9150a1e10d6cac79fa82";
-  sha256 = "07aq18n8jcn75fwmkl4ypsqjswnlrjad1a2ivd1mk9q59pdwfnrf";
+  rev = "9c90ff7e7df9ceadc7335bb43cc67ba92e171d53";
+  sha256 = "0b2gwbssb530rij8vg6i62rizbxp3i3hi1jif5179rdnjxdl42q2";
 })

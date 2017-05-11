@@ -6,22 +6,22 @@ let
   zsh-syntax-highlighting = pkgs.fetchFromGitHub {
     owner = "zsh-users";
     repo = "zsh-syntax-highlighting";
-    rev = "9523d6d49cb3d4db5bd84c3cec6168a2057fe3ab";
-    sha256 = "04g79s34yxdyr0576wd172s49p0fqcf8jiq845c04dyzhqpzc98l";
+    rev = "ad522a091429ba180c930f84b2a023b40de4dbcc";
+    sha256 = "0zzhkg969l4ijn32mi6ajq1hfq7kbg465vc412r282d8k5i0r0kj";
   };
 
   zsh-autosuggestions = pkgs.fetchFromGitHub {
     owner = "zsh-users";
     repo = "zsh-autosuggestions";
-    rev = "fedc22e9bbd046867860e772d7d6787f5dae9d4c";
-    sha256 = "0mnwyz4byvckrslzqfng5c0cx8ka0y12zcy52kb7amg3l07jrls4";
+    rev = "2cb6eb6e29852e64a146b0284275ecdc0661b082";
+    sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
   };
 
   zsh-history-substring-search = pkgs.fetchFromGitHub {
     owner = "zsh-users";
     repo = "zsh-history-substring-search";
-    rev = "aae3388491c2312c4efb2e86bcb999927bb2900e";
-    sha256 = "0lgmq1xcccnz5cf7vl0r0qj351hwclx9p80cl0qczxry4r2g5qaz";
+    rev = "c750a17757478686b671f6cdd3f2fc3cfb078edf";
+    sha256 = "18mhbzi0gavhsrhxs100ampl8krlnyh58sj3vbq38pgkbi5aqii9";
   };
 in
 {

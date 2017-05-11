@@ -11,8 +11,8 @@ let
     src = pkgs.fetchFromGitHub {
       repo = "kakoune";
       owner = "mawww";
-      rev = "7482d117cc85523e840dff595134dcb9cdc62207";
-      sha256 = "08j611y192n9vln9i94ldlvz3k0sg79dkmfc0b1vczrmaxhpgpfh";
+      rev = "8fa7e67abc9815afa78dfbd13bae1516bff564b1";
+      sha256 = "1vaj3jgz2p80c1synripii4ilka0mlrs7pv3pqg2n9sh42hcwxy6";
     };
   });
 in
