@@ -1,5 +1,7 @@
 decl str grepcmd 'rg --column'
 
+map global normal <c-p> :find<space>
+
 def find -params 1 -shell-candidates %{ find . -type f } %{ edit %arg{1} }
 
 def git-edit -params 1 -shell-candidates %{ git ls-files } %{ edit %arg{1} }
