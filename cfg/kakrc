@@ -1,6 +1,7 @@
 decl str grepcmd 'rg --column'
 
 map global normal <c-p> :find<space>
+map global normal '#' :comment-line<ret>
 
 def find -params 1 -shell-candidates %{ find . -type f } %{ edit %arg{1} }
 
