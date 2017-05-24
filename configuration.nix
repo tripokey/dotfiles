@@ -37,6 +37,7 @@ in
     firefoxWrapper (import ./pkgs/tkak)
     nix-repl
     indent
+    file
   ] ++ (with unstable.pkgs; [
     kakoune
     ranger
