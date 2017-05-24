@@ -48,6 +48,7 @@ in
       alias ns='nix-shell --command zsh'
       alias pns='nix-shell --indirect --add-root $HOME/.gcroots/dep --command zsh'
       alias nsu='nix-shell --command zsh -I stable=${builtins.toString <nixpkgs>} -I nixpkgs=${../unstable.nix}'
+      alias pkak='kak -E "%sh{cd \"$(git rev-parse --show-toplevel)\" && cat .project.kak}"'
 
       source ${zsh-autosuggestions}/zsh-autosuggestions.zsh
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
