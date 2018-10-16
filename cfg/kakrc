@@ -1,15 +1,22 @@
 decl str grepcmd 'rg --column'
 
-map global normal <c-p> :find<space>
+map global normal <c-p> :git-edit<space>
+map global normal <c-a-p> :find<space>
 map global normal '#' :comment-line<ret>
+
+add-highlighter global/ number-lines
 
 def find -params 1 -shell-candidates %{ find . -type f } %{ edit %arg{1} }
 
 def git-edit -params 1 -shell-candidates %{ git ls-files } %{ edit %arg{1} }
 
 hook global WinSetOption filetype=(rust) %{
-    racer-enable-autocomplete
-    set global makecmd 'cargo build'
+    set global makecmd 'cargo'
 }
+
+# Trim trailing whitespaces
+hook global BufWritePre .* %{ try %{ execute-keys -draft \%s\h+$<ret>d } }
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
 
 colorscheme solarized

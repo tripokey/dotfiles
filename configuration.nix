@@ -3,6 +3,16 @@
 let
   user = "tripokey";
   homeDir = "/home/${user}";
+  kakoune = pkgs.kakoune.overrideDerivation (oldAttrs: rec {
+    name = "kakoune-${version}";
+    version = "v2018.09.04";
+    src = pkgs.fetchFromGitHub {
+      repo = "kakoune";
+      owner = "mawww";
+      rev = "${version}";
+      sha256 = "08v55hh7whm6hx6a047gszh0h5g35k3r8r52aggv7r2ybzrrw6w1";
+    };
+  });
 in
 {
   imports =
