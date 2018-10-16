@@ -13,4 +13,3 @@ hook global WinSetOption filetype=(rust) %{
 }
 
 colorscheme solarized
-source ~/dotfiles/cfg/nix.kak # TODO remove

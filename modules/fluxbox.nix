@@ -8,10 +8,7 @@
 
   services.xserver = {
     enable = true;
-    windowManager.i3.enable = true;
-    windowManager.default = "i3";
-    desktopManager.xterm.enable = false;
-    desktopManager.default = "none";
+    windowManager.fluxbox.enable = true;
     displayManager = {
       slim = {
         enable = true;
