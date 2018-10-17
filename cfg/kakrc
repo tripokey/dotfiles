@@ -4,7 +4,23 @@ map global normal <c-p> :git-edit<space>
 map global normal <c-a-p> :find<space>
 map global normal '#' :comment-line<ret>
 
+alias global nw tmux-new-window
+alias global nv tmux-new-vertical
+alias global nh tmux-new-horizontal
+
+alias global rw tmux-repl-window
+alias global rv tmux-repl-vertical
+alias global rh tmux-repl-horizontal
+
+set-option global indentwidth 2
+
 add-highlighter global/ number-lines
+add-highlighter global/ wrap
+
+# Highlight search matches in italic
+add-highlighter global/ dynregex '%reg{/}' 0:+i
+
+colorscheme solarized
 
 def find -params 1 -shell-candidates %{ find . -type f } %{ edit %arg{1} }
 
@@ -19,4 +35,4 @@ hook global BufWritePre .* %{ try %{ execute-keys -draft \%s\h+$<ret>d } }
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
 
-colorscheme solarized
+try %{ source .kakrc.local }
