@@ -22,9 +22,9 @@ add-highlighter global/ dynregex '%reg{/}' 0:+i
 
 colorscheme solarized
 
-def find -params 1 -shell-candidates %{ find . -type f } %{ edit %arg{1} }
+def find -params 1 -shell-script-candidates %{ find . -type f } %{ edit %arg{1} }
 
-def git-edit -params 1 -shell-candidates %{ git ls-files } %{ edit %arg{1} }
+def git-edit -params 1 -shell-script-candidates %{ git ls-files } %{ edit %arg{1} }
 
 hook global WinSetOption filetype=(rust) %{
     set global makecmd 'cargo'
