@@ -1,9 +1,23 @@
 { config, pkgs, ... }:
 
 {
+  nix = {
+    distributedBuilds = true;
+    buildMachines = [
+      {
+        hostName = "192.168.158.5";
+        sshUser = "nixBuild";
+        sshKey = "/root/.ssh/id_nixBuild";
+        system = "x86_64-linux";
+        maxJobs = 16;
+      }
+    ];
+  };
+
   imports =
     [ 
       /etc/nixos/hardware-configuration.nix
+      ./common.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -11,17 +25,8 @@
 
   networking.hostName = "nexus";
 
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleUseXkbConfig = true;
-    defaultLocale = "en_US.UTF-8";
-  };
-
-  time.timeZone = "Europe/Stockholm";
-
   environment.systemPackages = with pkgs; [
-    kakoune
-    home-manager
+    firefox
   ];
 
   services.printing.enable = true;
@@ -30,9 +35,6 @@
   hardware.pulseaudio.enable = true;
 
   services.xserver.enable = true;
-  services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
-  services.xserver.xkbVariant = "altgr-intl";
 
   services.xserver.libinput.enable = true;
 
@@ -40,13 +42,6 @@
   services.xserver.desktopManager.gnome3.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = false;
-
-  users.users.tripokey = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; 
-  };
-
-  nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "19.03"; 
 }
