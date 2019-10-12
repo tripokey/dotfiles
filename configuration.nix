@@ -1,46 +1,52 @@
 { config, pkgs, ... }:
 
-let
-  user = "tripokey";
-  homeDir = "/home/${user}";
-in
 {
   imports =
-    [
+    [ 
       /etc/nixos/hardware-configuration.nix
-      ./modules/common.nix
     ];
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nexus";
 
+  i18n = {
+    consoleFont = "Lat2-Terminus16";
+    consoleUseXkbConfig = true;
+    defaultLocale = "en_US.UTF-8";
+  };
+
+  time.timeZone = "Europe/Stockholm";
+
   environment.systemPackages = with pkgs; [
-    gitAndTools.gitFull unzip
-    manpages tldr
-    file
-    (import ./pkgs/kakoune.nix)
-    (import ./pkgs/kak-lsp.nix)
-    ranger ripgrep
-    xterm xsel
-    fluxbox xorg.xrdb
+    kakoune
+    home-manager
   ];
 
-  users.extraUsers."${user}" = {
-    createHome = true;
-    home = "${homeDir}";
-    description = "Michael Leandersson";
-    extraGroups = [ "wheel" "disk" "cdrom" ];
+  services.printing.enable = true;
+
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+
+  services.xserver.enable = true;
+  services.xserver.layout = "us";
+  services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkbVariant = "altgr-intl";
+
+  services.xserver.libinput.enable = true;
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.wayland = false;
+
+  users.users.tripokey = {
     isNormalUser = true;
-    useDefaultShell = true;
+    extraGroups = [ "wheel" ]; 
   };
 
-  environment.variables.EDITOR = "kak";
+  nixpkgs.config.allowUnfree = true;
 
-  programs.tmux = {
-    enable = true;
-    extraTmuxConf = builtins.readFile ./cfg/.tmux.conf;
-  };
-
-  services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "startfluxbox";
-  networking.firewall.allowedTCPPorts = [ 3389 ];
+  system.stateVersion = "19.03"; 
 }
