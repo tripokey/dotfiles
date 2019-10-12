@@ -9,6 +9,8 @@
 
         packages = with pkgs; [
             xsel ripgrep kak-lsp
+            mosh
+            (pkgs.latest.rustChannels.stable.rust.override { extensions = [ "rust-src" ]; })
         ];
 
         sessionVariables = {
