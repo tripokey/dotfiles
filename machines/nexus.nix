@@ -15,7 +15,7 @@
   };
 
   imports =
-    [ 
+    [
       /etc/nixos/hardware-configuration.nix
       ./common.nix
     ];
@@ -43,5 +43,5 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = false;
 
-  system.stateVersion = "19.03"; 
+  system.stateVersion = "19.03";
 }
