@@ -68,7 +68,7 @@
         "ignorespace"
       ];
     };
-      
+
     bat = {
       enable = true;
     };
@@ -77,7 +77,7 @@
       enable = true;
       enableBashIntegration = true;
     };
-      
+
     git = {
       enable = true;
       userName = "Michael Leandersson";
@@ -133,7 +133,7 @@
           {
             name = "BufWritePre";
             option = ".*";
-            commands = "try %{ execute-keys -draft \%s\h+$<ret>d }";
+            commands = "try %{ execute-keys -draft \\%s\\h+$<ret>d }";
           }
         ];
       };
@@ -200,7 +200,7 @@
       keyMode = "vi";
       escapeTime = 1;
       baseIndex = 1;
-      
+
       plugins = with pkgs; [
         {
           plugin = tmuxPlugins.yank;
