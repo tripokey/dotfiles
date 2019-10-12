@@ -12,12 +12,6 @@
 
   networking.hostName = "shuusei1";
 
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "us";
-    defaultLocale = "en_US.UTF-8";
-  };
-
   programs.mosh.enable = true;
 
   services.openssh.enable = true;
