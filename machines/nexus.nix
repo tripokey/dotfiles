@@ -9,6 +9,7 @@
       ./modules/printer.nix
       ./modules/sound.nix
       ./modules/gnome.nix
+      ./modules/bluetooth.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
