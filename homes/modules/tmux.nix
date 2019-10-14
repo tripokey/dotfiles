@@ -27,6 +27,9 @@
       ];
 
       extraConfig = ''
+        set -g default-command ${pkgs.fish}/bin/fish
+        set -g default-shell ${pkgs.fish}/bin/fish
+
         # Disable mouse
         setw -g mouse off
 

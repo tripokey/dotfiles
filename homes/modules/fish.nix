@@ -2,9 +2,8 @@
 
 {
   programs = {
-    direnv = {
+    fish = {
       enable = true;
-      enableFishIntegration = true;
     };
   };
 }

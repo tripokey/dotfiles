@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./bash.nix
+    ./fish.nix
     ./bat.nix
     ./direnv.nix
     ./git.nix
@@ -12,6 +12,7 @@
     ./mosh.nix
     ./rust.nix
     ./skim.nix
+    ./starship.nix
     ./taskwarrior.nix
     ./tmux.nix
   ];
