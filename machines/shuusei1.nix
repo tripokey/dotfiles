@@ -6,7 +6,7 @@
     ./modules/common.nix
     ./modules/nix-server.nix
     ./modules/ssh-server.nix
-    ./tripokey.nix
+    ./modules/tripokey.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

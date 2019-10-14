@@ -9,7 +9,7 @@
     ./modules/sound.nix
     ./modules/gnome.nix
     ./modules/bluetooth.nix
-    ./tripokey.nix
+    ./modules/tripokey.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
