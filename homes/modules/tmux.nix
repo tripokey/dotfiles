@@ -36,7 +36,6 @@
 
         unbind p
 
-        # Without x clipboard TODO fix x clipboard
         bind-key -T copy-mode-vi 'v' send -X begin-selection
         bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
         bind-key 'p' paste-buffer

@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./tripokey.nix
     ./locale.nix
     ./editor.nix
   ];

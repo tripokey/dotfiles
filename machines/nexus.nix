@@ -1,16 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      /etc/nixos/hardware-configuration.nix
-      ./modules/common.nix
-      ./modules/nix-client.nix
-      ./modules/printer.nix
-      ./modules/sound.nix
-      ./modules/gnome.nix
-      ./modules/bluetooth.nix
-    ];
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+    ./modules/common.nix
+    ./modules/nix-client.nix
+    ./modules/printer.nix
+    ./modules/sound.nix
+    ./modules/gnome.nix
+    ./modules/bluetooth.nix
+    ./tripokey.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
