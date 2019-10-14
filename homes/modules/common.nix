@@ -4,6 +4,7 @@
   imports = [
     ./fish.nix
     ./bat.nix
+    ./fd.nix
     ./direnv.nix
     ./git.nix
     ./htop.nix
