@@ -7,7 +7,7 @@
     ./modules/nix-client.nix
     ./modules/printer.nix
     ./modules/sound.nix
-    ./modules/gnome.nix
+    ./modules/x.nix
     ./modules/bluetooth.nix
     ./modules/tripokey.nix
   ];
@@ -20,7 +20,6 @@
   services.xserver.libinput.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.displayManager.gdm.wayland = false;
 
   system.stateVersion = "19.03";
 }
