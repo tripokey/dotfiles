@@ -8,8 +8,6 @@
   };
 
   services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
-  services.xserver.xkbVariant = "altgr-intl";
 
   time.timeZone = "Europe/Stockholm";
 }
