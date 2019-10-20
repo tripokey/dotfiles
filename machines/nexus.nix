@@ -10,6 +10,7 @@
     ./modules/x.nix
     ./modules/bluetooth.nix
     ./modules/tripokey.nix
+    ./modules/uhk.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
