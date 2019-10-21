@@ -3,7 +3,7 @@
 {
   home = {
     packages = with pkgs; [
-      nerdfonts
+      fira-code
     ];
   };
 
@@ -13,7 +13,7 @@
     urxvt = {
       enable = true;
       fonts = [
-        "xft:Droid Sans Mono Nerd Font:size=9"
+        "xft:Fira Code:size=9"
       ];
     };
   };
