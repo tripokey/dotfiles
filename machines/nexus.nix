@@ -17,6 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nexus";
+  networking.networkmanager.enable = true;
 
   services.xserver.libinput.enable = true;
 

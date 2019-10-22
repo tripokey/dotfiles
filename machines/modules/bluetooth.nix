@@ -12,4 +12,7 @@
     extraModules = [ pkgs.pulseaudio-modules-bt ];
     package = pkgs.pulseaudioFull;
   };
+
+  services.dbus.packages = [ pkgs.blueman ];
+  services.blueman.enable = true;
 }
