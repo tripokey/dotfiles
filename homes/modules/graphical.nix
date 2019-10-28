@@ -3,7 +3,7 @@
 {
   imports = [
     ./i3.nix
-    ./urxvt.nix
+    ./xterm.nix
     ./firefox.nix
   ];
 }

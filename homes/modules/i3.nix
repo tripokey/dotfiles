@@ -9,7 +9,7 @@
 
         config = {
           keybindings = lib.mkOptionDefault {
-            "Mod1+Return" = "exec urxvt -e tmux";
+            "Mod1+Return" = "exec xterm -e tmux -2";
           };
         };
       };
