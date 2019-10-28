@@ -23,5 +23,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  time.hardwareClockInLocalTime = true;
+
   system.stateVersion = "19.03";
 }
