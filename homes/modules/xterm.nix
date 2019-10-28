@@ -12,7 +12,6 @@
   xresources = {
     properties = {
       "*font" = "xft:Fira Code:size=9";
-      "*dpi" = "220";
     };
 
     extraConfig = builtins.readFile (
