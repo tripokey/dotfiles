@@ -1,6 +1,12 @@
 { pkgs, lib, ... }:
 
 {
+  home = {
+    packages = with pkgs; [
+      libnotify
+    ];
+  };
+
   xsession = {
     enable = true;
     windowManager = {
@@ -13,6 +19,12 @@
           };
         };
       };
+    };
+  };
+
+  services = {
+    dunst = {
+      enable = true;
     };
   };
 }
