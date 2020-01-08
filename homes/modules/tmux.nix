@@ -4,7 +4,7 @@
   programs = {
     tmux = {
       enable = true;
-      terminal = "tmux-256color";
+      terminal = "screen-256color";
       shortcut = "a";
       clock24 = true;
       keyMode = "vi";
