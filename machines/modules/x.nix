@@ -3,6 +3,5 @@
 {
   services.xserver = {
     enable = true;
-    dpi = 220;
   };
 }
