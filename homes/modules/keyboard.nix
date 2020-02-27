@@ -3,7 +3,11 @@
 {
   home = {
     keyboard = {
-      layout = "us";
+      layout = "us,se";
     };
+
+    options = [
+      "grp:caps_toggle"
+    ];
   };
 }
