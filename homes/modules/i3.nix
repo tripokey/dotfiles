@@ -15,9 +15,10 @@
         enable = true;
 
         config = {
+          modifier = "Mod4";
           keybindings = lib.mkOptionDefault {
-            "Mod1+Return" = "exec xterm -e tmux -2";
-            "Mod1+L" = "exec i3lock -c 000000";
+            "Mod4+Return" = "exec xterm -e tmux -2";
+            "Mod4+L" = "exec i3lock -c 000000";
           };
         };
 
