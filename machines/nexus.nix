@@ -11,6 +11,7 @@
     ./modules/bluetooth.nix
     ./modules/tripokey.nix
     ./modules/uhk.nix
+    ./modules/gaming.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

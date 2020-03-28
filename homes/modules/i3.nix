@@ -20,6 +20,13 @@
             "Mod1+L" = "exec i3lock -c 000000";
           };
         };
+
+        extraConfig = ''
+          bindsym Mod4+Shift+g mode "gaming"
+          mode "gaming" {
+            bindsym Mod4+Shift+g mode "default"
+          }
+        '';
       };
     };
   };
