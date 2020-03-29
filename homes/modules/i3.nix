@@ -1,5 +1,8 @@
 { pkgs, lib, ... }:
 
+let
+  modifier = "Mod4";
+in
 {
   home = {
     packages = with pkgs; [
@@ -15,17 +18,17 @@
         enable = true;
 
         config = {
-          modifier = "Mod4";
+          modifier = "${modifier}";
           keybindings = lib.mkOptionDefault {
-            "Mod4+Return" = "exec xterm -e tmux -2";
-            "Mod4+L" = "exec i3lock -c 000000";
+            "${modifier}+Return" = "exec xterm -e tmux -2";
+            "${modifier}+L" = "exec i3lock -c 000000";
           };
         };
 
         extraConfig = ''
-          bindsym Mod4+Shift+g mode "gaming"
+          bindsym ${modifier}+Shift+g mode "gaming"
           mode "gaming" {
-            bindsym Mod4+Shift+g mode "default"
+            bindsym ${modifier}+Shift+g mode "default"
           }
         '';
       };
