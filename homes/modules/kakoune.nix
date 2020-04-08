@@ -66,28 +66,34 @@
 
         decl str grepcmd 'rg --column'
 
-        def nw %{
-          tmux-repl-window "kak -c %val{session}"
+        define-command -docstring "nw [<commands>]: create new kak window" \
+        nw -params .. -command-completion %{
+          tmux-terminal-window kak -c %val{session} -e "%arg{@}"
         }
 
-        def nv %{
-          tmux-repl-vertical "kak -c %val{session}"
+        define-command -docstring "nv [<commands>]: split kak horizontally" \
+        nv -params .. -command-completion %{
+          tmux-terminal-vertical kak -c %val{session} -e "%arg{@}"
         }
 
-        def nh %{
-          tmux-repl-horizontal "kak -c %val{session}"
+        define-command -docstring "nh [<commands>]: split kak vertically" \
+        nh -params .. -command-completion %{
+          tmux-terminal-horizontal kak -c %val{session} -e "%arg{@}"
         }
 
-        def rw %{
-          tmux-repl-window
+        define-command -docstring "rw [<commands>]: create new repl window" \
+        rw -params .. -shell-completion %{
+          tmux-repl-window "%arg{@}"
         }
 
-        def rv %{
-          tmux-repl-vertical
+        define-command -docstring "rv [<commands>]: horizontal repl split" \
+        rv -params .. -shell-completion %{
+          tmux-repl-vertical "%arg{@}"
         }
 
-        def rh %{
-          tmux-repl-horizontal
+        define-command -docstring "rh [<commands>]: vertical repl split" \
+        rh -params .. -shell-completion %{
+          tmux-repl-horizontal "%arg{@}"
         }
 
         # Highlight search matches in italic
