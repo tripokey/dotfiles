@@ -5,6 +5,7 @@ in
 {
   services.xserver = {
     enable = true;
+    desktopManager.xterm.enable=true;
     displayManager.lightdm.background = "${wallpaper}";
   };
 }

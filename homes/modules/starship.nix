@@ -1,11 +1,13 @@
 { pkgs, ... }:
 
 {
-  home = {
-    packages = with pkgs; [
-      starship
-    ];
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    settings = {
+      character = {
+        symbol = ">";
+      };
+    };
   };
-
-  programs.fish.shellInit = "eval (${pkgs.starship}/bin/starship init fish)";
 }
