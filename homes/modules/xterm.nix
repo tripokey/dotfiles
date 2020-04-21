@@ -11,7 +11,7 @@
 
   xresources = {
     properties = {
-      "*font" = "xft:Fira Code:style=Light:size=9:antialias=true:hinting=true";
+      "*font" = "xft:Fira Code:style=Retina:size=9:antialias=true:hinting=true";
     };
 
     extraConfig = builtins.readFile (
