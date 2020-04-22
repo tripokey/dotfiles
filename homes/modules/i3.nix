@@ -22,7 +22,7 @@ in
         config = {
           modifier = "${modifier}";
           keybindings = lib.mkOptionDefault {
-            "${modifier}+Return" = "exec xterm -e fish";
+            "${modifier}+Return" = "exec alacritty -e fish";
             "${modifier}+L" = "exec i3lock -c 000000";
           };
           startup = [
