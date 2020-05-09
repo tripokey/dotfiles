@@ -7,12 +7,12 @@ rec {
   };
 
   uhk-agent = let
-    version = "1.4.3";
+    version = "1.4.5";
     image = self.stdenv.mkDerivation {
       name = "uhk-agent-image";
       src = self.fetchurl {
         url = "https://github.com/UltimateHackingKeyboard/agent/releases/download/v${version}/UHK.Agent-${version}-linux-x86_64.AppImage";
-        sha256 = "18kfpjy5pvz2iwwpnynii9xmisbygclwn6z6c6dsgwn2wni35d6d";
+        sha256 = "1nimb8ab7p478p8xpa5lkdddwr1g59cp9jly167fc47gqq8zs7kl";
       };
       buildCommand = ''
         mkdir -p $out
@@ -24,7 +24,7 @@ rec {
       owner = "UltimateHackingKeyboard";
       repo = "agent";
       rev = "v${version}";
-      sha256 = "0zqjjyy1d5yna6cfgj73ds4y6hizq1whinmaf9ifhmd952bkf0a0";
+      sha256 = "0nh07b03dn9fky93307bkikgiz9wfaba2nbkxmfc9vk8zf34wsfx";
     };
   in self.runCommand "uhk-agent" {} ''
     mkdir -p $out/bin $out/etc/udev/rules.d
