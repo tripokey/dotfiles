@@ -19,10 +19,15 @@
 
   networking.hostName = "nexus";
   networking.networkmanager.enable = true;
+  networking.useDHCP = false;
+  networking.interfaces.enp0s20f0u1.useDHCP = true;
+  networking.interfaces.enp4s0.useDHCP = true;
+  networking.interfaces.wlp3s0.useDHCP = true;
 
   services.xserver.libinput.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   time.hardwareClockInLocalTime = true;
 
-  system.stateVersion = "19.09";
+  system.stateVersion = "20.03";
 }

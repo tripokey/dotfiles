@@ -6,6 +6,16 @@
       xsel ripgrep kak-lsp
     ];
 
+    file.kaklspconfig = {
+      text = ''
+      [language.rust]
+      filetypes = ["rust"]
+      roots = ["Cargo.toml"]
+      command = "rust-analyzer"
+      '';
+      target = ".config/kak-lsp/kak-lsp.toml";
+    };
+
     sessionVariables = {
       EDITOR = "kak";
     };
@@ -66,34 +76,25 @@
 
         decl str grepcmd 'rg --column'
 
-        define-command -docstring "nw [<commands>]: create new kak window" \
-        nw -params .. -command-completion %{
-          tmux-terminal-window kak -c %val{session} -e "%arg{@}"
-        }
+        hook global ModuleLoaded tmux %{
+          alias global rv tmux-repl-vertical
+          alias global rh tmux-repl-horizontal
+          alias global rw tmux-repl-window
 
-        define-command -docstring "nv [<commands>]: split kak horizontally" \
-        nv -params .. -command-completion %{
-          tmux-terminal-vertical kak -c %val{session} -e "%arg{@}"
-        }
+          define-command -docstring "nh [<commands>]: split kak vertically" \
+          nh -params .. -command-completion %{
+            tmux-terminal-horizontal kak -c %val{session} -e "%arg{@}"
+          }
 
-        define-command -docstring "nh [<commands>]: split kak vertically" \
-        nh -params .. -command-completion %{
-          tmux-terminal-horizontal kak -c %val{session} -e "%arg{@}"
-        }
+          define-command -docstring "nv [<commands>]: split kak horizontally" \
+          nv -params .. -command-completion %{
+            tmux-terminal-vertical kak -c %val{session} -e "%arg{@}"
+          }
 
-        define-command -docstring "rw [<commands>]: create new repl window" \
-        rw -params .. -shell-completion %{
-          tmux-repl-window "%arg{@}"
-        }
-
-        define-command -docstring "rv [<commands>]: horizontal repl split" \
-        rv -params .. -shell-completion %{
-          tmux-repl-vertical "%arg{@}"
-        }
-
-        define-command -docstring "rh [<commands>]: vertical repl split" \
-        rh -params .. -shell-completion %{
-          tmux-repl-horizontal "%arg{@}"
+          define-command -docstring "nw [<commands>]: create new kak window" \
+          nw -params .. -command-completion %{
+            tmux-terminal-window kak -c %val{session} -e "%arg{@}"
+          }
         }
 
         # Highlight search matches in italic
@@ -105,7 +106,11 @@
 
         eval %sh{kak-lsp --kakoune -s $kak_session}
         lsp-enable
-        lsp-auto-hover-enable
+
+        hook global WinSetOption filetype=rust %{
+          set-option global lsp_server_configuration rust.clippy_preference="on"
+          lsp-auto-hover-enable
+        }
 
         hook global ModuleLoaded fzf %{
           set global fzf_implementation sk

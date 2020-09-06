@@ -15,7 +15,7 @@
 
   xsession.windowManager.i3.config.startup = [
     {
-      command = "xrandr --output eDP-1 --scale 0.5x0.5 --primary";
+      command = "xrandr --output DP-0 --primary";
       always = true;
       notification = false;
     }
