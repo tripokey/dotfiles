@@ -6,16 +6,6 @@
       xsel ripgrep kak-lsp
     ];
 
-    file.kaklspconfig = {
-      text = ''
-      [language.rust]
-      filetypes = ["rust"]
-      roots = ["Cargo.toml"]
-      command = "rust-analyzer"
-      '';
-      target = ".config/kak-lsp/kak-lsp.toml";
-    };
-
     sessionVariables = {
       EDITOR = "kak";
     };
