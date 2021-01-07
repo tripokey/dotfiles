@@ -9,6 +9,29 @@
     sessionVariables = {
       EDITOR = "kak";
     };
+
+    file."kak-lsp.toml" = {
+      target = ".config/kak-lsp/kak-lsp.toml";
+      text = ''
+        snippet_support = false
+        verbosity = 2
+
+        [sematic_scopes]
+        variable = "variable"
+        entity_name_function = "function"
+        entity_name_type = "type"
+        variable_other_enummember = "variable"
+        entity_name_namespace = "module"
+
+        [server]
+        timeout = 1800
+
+        [language.rust]
+        filetypes = ["rust"]
+        roots = ["Cargo.toml"]
+        command = "rls"
+      '';
+    };
   };
 
   programs = {
