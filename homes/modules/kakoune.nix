@@ -37,6 +37,11 @@
   programs = {
     kakoune = {
       enable = true;
+
+      plugins = with pkgs.kakounePlugins; [
+        kak-fzf
+      ];
+
       config = {
         colorScheme = "solarized-dark";
         showMatching = true;
@@ -128,7 +133,6 @@
         hook global ModuleLoaded fzf %{
           set global fzf_implementation sk
           set global fzf_highlight_command bat
-          set global fzf_file_command rg
         }
       '';
     };
