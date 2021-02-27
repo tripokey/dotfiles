@@ -99,6 +99,11 @@
           alias global rh tmux-repl-horizontal
           alias global rw tmux-repl-window
 
+          define-command -docstring "pd: change the server's working directory to the parent directory for the current buffer" \
+          pd %{
+            cd "%sh{ echo $(dirname $kak_buffile) }"
+          }
+
           define-command -docstring "nh [<commands>]: split kak vertically" \
           nh -params .. -command-completion %{
             tmux-terminal-horizontal kak -c %val{session} -e "%arg{@}"
