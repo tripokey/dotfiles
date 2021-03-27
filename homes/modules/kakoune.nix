@@ -4,6 +4,7 @@
   home = {
     packages = with pkgs; [
       xsel ripgrep kak-lsp
+      rnix-lsp
     ];
 
     sessionVariables = {
@@ -30,6 +31,11 @@
         filetypes = ["rust"]
         roots = ["Cargo.toml"]
         command = "rls"
+
+        [language.nix]
+        filetypes = ["nix"]
+        roots = [".git"]
+        command = "rnix-lsp"
       '';
     };
   };
