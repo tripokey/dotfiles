@@ -30,7 +30,7 @@
         [language.rust]
         filetypes = ["rust"]
         roots = ["Cargo.toml"]
-        command = "rls"
+        command = "rust-analyzer"
 
         [language.nix]
         filetypes = ["nix"]
