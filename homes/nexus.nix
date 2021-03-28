@@ -6,5 +6,6 @@
     ./modules/graphical.nix
     ./modules/home.nix
     ./modules/gaming.nix
+    ./modules/gnome.nix
   ];
 }
