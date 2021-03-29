@@ -7,7 +7,7 @@
     ./modules/nix-client.nix
     ./modules/printer.nix
     ./modules/sound.nix
-    ./modules/gnome.nix
+    ./modules/x.nix
     ./modules/bluetooth.nix
     ./modules/tripokey.nix
     ./modules/uhk.nix
