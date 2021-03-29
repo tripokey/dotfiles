@@ -31,6 +31,12 @@ in
               always = true;
               notification = false;
             }
+
+            {
+              command = "${pkgs.stretchly}/bin/stretchly";
+              always = true;
+              notification = false;
+            }
           ];
         };
 
