@@ -24,7 +24,10 @@
 
   services.xserver.libinput.enable = true;
 
-  boot.blacklistedKernelModules = [ "i2c_nvidia_gpu" ];
+  boot.blacklistedKernelModules = [
+    "i2c_nvidia_gpu"
+    "tpm_tis"
+  ];
 
   time.hardwareClockInLocalTime = true;
 
