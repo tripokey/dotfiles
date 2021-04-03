@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -27,6 +27,16 @@
   boot.blacklistedKernelModules = [ "i2c_nvidia_gpu" ];
 
   time.hardwareClockInLocalTime = true;
+
+  services.xserver.displayManager.setupCommands = lib.mkAfter ''
+    ${pkgs.xorg.xrandr}/bin/xrandr \
+      --output DP-4 \
+        --mode 2560x1440 \
+      --output eDP-1-1 \
+        --primary \
+        --mode 1920x1080 \
+        --right-of DP-4
+  '';
 
   system.stateVersion = "20.09";
 }
