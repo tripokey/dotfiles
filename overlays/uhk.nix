@@ -3,16 +3,17 @@ rec {
   appimage-run = super.appimage-run.override {
     extraPkgs = p: with p; [
       at-spi2-core
+      xorg.libxshmfence
     ];
   };
 
   uhk-agent = let
-    version = "1.5.5";
+    version = "1.5.11";
     image = self.stdenv.mkDerivation {
       name = "uhk-agent-image";
       src = self.fetchurl {
         url = "https://github.com/UltimateHackingKeyboard/agent/releases/download/v${version}/UHK.Agent-${version}-linux-x86_64.AppImage";
-        sha256 = "1yzvprxz446nx1xmnix7b8hz1akn00y1wwbir8rdn6jpx6dmrygb";
+        sha256 = "1xc0p5ncxzmz5iiwf7cwwiqfwxc49qvd84wawlak9mwm7a5rqrpn";
       };
       buildCommand = ''
         mkdir -p $out
@@ -24,11 +25,14 @@ rec {
       owner = "UltimateHackingKeyboard";
       repo = "agent";
       rev = "v${version}";
-      sha256 = "07l1iwqlbifnfnyxg80n5zyg3nvwzpldvwq5am4wg9spm96pr6m0";
+      sha256 = "1pkxpyk9ih243vj5mjaspqv2i9xvx086fzri7ggwgjj0z71l271q";
     };
   in self.runCommand "uhk-agent" {} ''
     mkdir -p $out/bin $out/etc/udev/rules.d
-    echo "${appimage-run}/bin/appimage-run ${image}/appimage" > $out/bin/uhk-agent
+    cat << EOF > $out/bin/uhk-agent
+    #!${self.bash}/bin/bash
+    ${appimage-run}/bin/appimage-run ${image}/appimage \$@
+    EOF
     chmod +x $out/bin/uhk-agent
     cp "${source}/rules/50-uhk60.rules" $out/etc/udev/rules.d
   '';
