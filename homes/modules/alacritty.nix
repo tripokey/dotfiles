@@ -54,7 +54,7 @@
       font = {
         normal = {
           family = "Fira Code";
-          style = "Retina";
+          style = "Normal";
         };
 
         bold = {
