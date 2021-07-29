@@ -6,6 +6,5 @@
     ./alacritty.nix
     ./firefox.nix
     ./arandr.nix
-    ./stretchly.nix
   ];
 }
