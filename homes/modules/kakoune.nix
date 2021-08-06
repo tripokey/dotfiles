@@ -4,7 +4,7 @@
   home = {
     packages = with pkgs; [
       xsel ripgrep kak-lsp
-      rnix-lsp
+      rnix-lsp rust-analyzer
     ];
 
     sessionVariables = {
