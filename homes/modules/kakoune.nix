@@ -49,7 +49,7 @@
       ];
 
       config = {
-        colorScheme = "solarized-dark";
+        colorScheme = "gruvbox";
         showMatching = true;
         wrapLines.enable = true;
         indentWidth = 2;

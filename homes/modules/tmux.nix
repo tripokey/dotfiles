@@ -18,10 +18,10 @@
         }
 
         {
-          plugin = tmuxPlugins.tmux-colors-solarized;
+          plugin = tmuxPlugins.gruvbox;
           extraConfig = ''
-            set -g @plugin 'tmux-plugins/tmux-colors-solarized'
-            set -g @colors-solarized 'dark'
+            set -g @plugin 'tmux-plugins/gruvbox'
+            set -g @tmux-gruvbox 'dark'
           '';
         }
       ];
