@@ -2,6 +2,8 @@ local wezterm = require 'wezterm';
 
 return {
     color_scheme = "Gruvbox Dark",
+    
+    tab_bar_at_bottom = true,
 
     leader = { key="a", mods="CTRL" },
     keys = {
