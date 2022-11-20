@@ -7,7 +7,7 @@
     ./modules/nushell.nix
     ./modules/git.nix
     ./modules/home.nix
-    ./modules/kakoune.nix
+    ./modules/helix.nix
     ./modules/skim.nix
     ./modules/starship.nix
     ./modules/taskwarrior.nix

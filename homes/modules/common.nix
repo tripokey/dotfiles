@@ -7,10 +7,11 @@
     ./nushell.nix
     ./git.nix
     ./htop.nix
-    ./kakoune.nix
+    ./helix.nix
     ./keyboard.nix
     ./mosh.nix
     ./niv.nix
+    ./ripgrep.nix
     ./rust.nix
     ./skim.nix
     ./starship.nix
