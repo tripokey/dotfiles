@@ -14,5 +14,8 @@
 
   networking.hostName = "shuusei1";
 
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
+
   system.stateVersion = "19.03";
 }
