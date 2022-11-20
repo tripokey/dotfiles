@@ -2,7 +2,7 @@
 
 {
   programs = {
-    fish = {
+    nushell = {
       enable = true;
     };
   };

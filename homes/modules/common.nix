@@ -4,7 +4,7 @@
   imports = [
     ./bat.nix
     ./direnv.nix
-    ./fish.nix
+    ./nushell.nix
     ./git.nix
     ./htop.nix
     ./kakoune.nix

@@ -4,7 +4,7 @@
   imports = [
     ./modules/bat.nix
     ./modules/direnv.nix
-    ./modules/fish.nix
+    ./modules/nushell.nix
     ./modules/git.nix
     ./modules/home.nix
     ./modules/kakoune.nix

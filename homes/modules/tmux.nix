@@ -27,8 +27,8 @@
       ];
 
       extraConfig = ''
-        set -g default-command ${pkgs.fish}/bin/fish
-        set -g default-shell ${pkgs.fish}/bin/fish
+        set -g default-command ${pkgs.nushell}/bin/nu
+        set -g default-shell ${pkgs.nushell}/bin/nu
 
         # Disable mouse
         setw -g mouse off
