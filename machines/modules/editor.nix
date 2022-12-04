@@ -2,8 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    kakoune
+    helix
   ];
 
-  environment.variables.EDITOR = "kak";
+  environment.variables.EDITOR = "hx";
 }
