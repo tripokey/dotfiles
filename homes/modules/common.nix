@@ -14,7 +14,6 @@
     ./ripgrep.nix
     ./rust.nix
     ./skim.nix
-    ./starship.nix
     ./taskwarrior.nix
     ./tmux.nix
   ];
