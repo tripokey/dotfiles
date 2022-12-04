@@ -11,5 +11,5 @@
 
   users.groups.nixBuild = {};
 
-  nix.trustedUsers = [ "nixBuild" ];
+  nix.settings.trusted-users = [ "nixBuild" ];
 }
