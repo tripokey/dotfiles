@@ -8,7 +8,7 @@
   home.file.nushell_env = {
     text = ''
     mkdir ~/.cache/starship
-    starship init nu | save ~/.cache/starship/init.nu
+    starship init nu | sed 's/size -c/size/' | save ~/.cache/starship/init.nu
     '';
 
     target = ".config/nushell/env.nu";
