@@ -10,7 +10,6 @@
     ./modules/x.nix
     ./modules/bluetooth.nix
     ./modules/tripokey.nix
-    ./modules/uhk.nix
     ./modules/gaming.nix
     # ./nexus/nvidia_offload.nix
     ./nexus/nvidia_sync.nix
