@@ -8,16 +8,9 @@
   programs = {
     nushell = {
       enable = true;
+
+      configFile.source = ../../config.nu;
+      envFile.source = ../../env.nu;
     };
-  };
-
-  home.file.nushell_env = {
-    source = ../../env.nu;
-    target = ".config/nushell/env.nu";
-  };
-
-  home.file.nushell_config = {
-    source = ../../config.nu;
-    target = ".config/nushell/config.nu";
   };
 }
