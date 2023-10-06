@@ -21,4 +21,6 @@
   networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  services.thermald.enable = true;
 }
