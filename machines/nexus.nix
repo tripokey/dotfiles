@@ -14,6 +14,10 @@
     ./nexus/nvidia_sync.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    firmware-updater
+  ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -23,4 +27,5 @@
   nixpkgs.config.allowUnfree = true;
 
   services.thermald.enable = true;
+  services.fwupd.enable = true;
 }
