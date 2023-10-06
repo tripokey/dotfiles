@@ -11,6 +11,7 @@
     ./modules/tripokey.nix
     ./modules/gaming.nix
     ./modules/gnome.nix
+    ./modules/uhk.nix
     ./nexus/nvidia_sync.nix
   ];
 
