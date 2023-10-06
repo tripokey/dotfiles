@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./alacritty.nix
+    ./wezterm.nix
     ./firefox.nix
-    ./arandr.nix
+    # ./arandr.nix
   ];
 }

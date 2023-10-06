@@ -15,6 +15,5 @@
     ./rust.nix
     ./skim.nix
     ./taskwarrior.nix
-    ./tmux.nix
   ];
 }

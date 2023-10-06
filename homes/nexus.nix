@@ -7,10 +7,4 @@
     ./modules/home.nix
     ./modules/gaming.nix
   ];
-
-  services = {
-    network-manager-applet.enable = true;
-    blueman-applet.enable = true;
-    pasystray.enable = true;
-  };
 }

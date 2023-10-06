@@ -3,6 +3,6 @@
 {
   users.users.tripokey = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "plugdev" ];
+    extraGroups = [ "wheel" "plugdev" "networkmanager" ];
   };
 }

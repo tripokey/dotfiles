@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {
-    color_scheme = "Gruvbox Dark",
+    color_scheme = "Gruvbox Light",
     
     tab_bar_at_bottom = true,
 
