@@ -5,6 +5,8 @@ return {
     
     tab_bar_at_bottom = true,
 
+    default_prog = { 'nu', '-l' },
+
     leader = { key="a", mods="CTRL" },
     keys = {
           {key="|", mods="LEADER|SHIFT", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
