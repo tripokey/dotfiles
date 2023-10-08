@@ -12,6 +12,7 @@
     ./modules/gaming.nix
     ./modules/gnome.nix
     ./modules/uhk.nix
+    ./modules/cuda.nix
     ./nexus/nvidia_sync.nix
   ];
 
