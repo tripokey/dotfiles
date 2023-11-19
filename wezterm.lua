@@ -7,6 +7,9 @@ return {
 
     default_prog = { 'nu', '-l' },
 
+    -- Workaround for mouse cursor not automatically appearing when mouse is moved
+    hide_mouse_cursor_when_typing = false,
+
     leader = { key="a", mods="CTRL" },
     keys = {
           {key="|", mods="LEADER|SHIFT", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
