@@ -10,5 +10,10 @@
       source = ../../helix.toml;
       target = ".config/helix/config.toml";
     };
+
+    file.helixlanguages = {
+      source = ../../languages.toml;
+      target = ".config/helix/languages.toml";
+    };
   };
 }
