@@ -10,5 +10,6 @@
     ./helix.nix
     ./ripgrep.nix
     ./taskwarrior.nix
+    ./nil.nix
   ];
 }
