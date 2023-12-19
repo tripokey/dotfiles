@@ -7,6 +7,7 @@
     ./modules/nix-server.nix
     ./modules/ssh-server.nix
     ./modules/tripokey.nix
+    ./modules/minecraft-server.nix
 
     <home-manager/nixos>
   ];
