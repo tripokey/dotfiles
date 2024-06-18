@@ -22,8 +22,10 @@
   };
 
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
   time.timeZone = "Europe/Stockholm";
