@@ -12,7 +12,7 @@ in
   xdg.desktopEntries = {
     pico8 = {
       name = "PICO-8";
-      exec = "${pico8}/bin/pico8";
+      exec = "pico8 -splore";
       terminal = false;
       categories = [ "Game" ];
     };
