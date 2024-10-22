@@ -5,6 +5,7 @@
     ./bat.nix
     ./direnv.nix
     ./nushell.nix
+    ./carapace.nix
     ./git.nix
     ./htop.nix
     ./helix.nix
