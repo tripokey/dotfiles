@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm';
 
 return {
+    front_end = "WebGpu",
+    enable_wayland = false,
     color_scheme = "Gruvbox Light",
     
     tab_bar_at_bottom = true,
