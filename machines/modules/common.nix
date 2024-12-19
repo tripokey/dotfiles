@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./locale.nix
     ./editor.nix
   ];
 

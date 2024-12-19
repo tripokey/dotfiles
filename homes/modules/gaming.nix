@@ -3,7 +3,7 @@
 {
   home = {
     packages = with pkgs; [
-      steam lutris
+      steam
     ];
   };
 }
