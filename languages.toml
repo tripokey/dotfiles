@@ -10,3 +10,10 @@ name = "nu"
 # comment-token = "#"
 # indent = { tab-width = 2, unit = "  " }
 language-servers = [ "nu-lsp" ]
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"
