@@ -12,6 +12,16 @@ return {
         path = "~/vaults/personal",
       },
     },
+    completion = {
+      -- Disable completion using nvim_cmp
+      nvim_cmp = false,
+      -- Enables completion using blink.cmp
+      blink = true,
+      -- Trigger completion at 2 chars.
+      min_chars = 2,
+      -- Set to false to disable new note creation in the picker
+      create_new = true,
+    },
     templates = {
       folder = "templates",
       date_format = "%Y-%m-%d",
