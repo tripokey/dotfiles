@@ -1,16 +1,13 @@
 local wezterm = require 'wezterm';
 
 return {
-    front_end = "WebGpu",
-    enable_wayland = false,
     color_scheme = "Gruvbox Light",
+
+    window_decorations = "NONE",
     
     tab_bar_at_bottom = true,
 
     default_prog = { 'nu', '-l' },
-
-    -- Workaround for mouse cursor not automatically appearing when mouse is moved
-    hide_mouse_cursor_when_typing = false,
 
     leader = { key="a", mods="CTRL" },
     keys = {
