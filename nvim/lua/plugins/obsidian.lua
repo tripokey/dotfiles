@@ -8,12 +8,12 @@ return {
   opts = {
     workspaces = {
       {
-        name = "personal",
-        path = "~/vaults/personal",
-      },
-      {
         name = "work",
         path = "~/vaults/work",
+      },
+      {
+        name = "personal",
+        path = "~/vaults/personal",
       },
     },
     completion = {
@@ -39,6 +39,7 @@ return {
       --- See: https://github.com/obsidian-nvim/obsidian.nvim/wiki/Template#customizations
       customizations = {},
     },
+    ui = { enable = false },
   },
   keys = {
     { "<leader>o", "", desc = "+obsidian", mode = "n" },
