@@ -6,6 +6,8 @@ $env.config.buffer_editor = 'nvim'
 
 alias wezterm = flatpak run org.wezfurlong.wezterm
 alias nv = nvim
+alias ghce = gh copilot explain
+alias ghcs = gh copilot suggest
 
 source $"($nu.home-path)/.cargo/env.nu"
 source ~/.cache/starship/init.nu
