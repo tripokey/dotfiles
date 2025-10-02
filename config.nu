@@ -1,6 +1,7 @@
 use std "path add"
 
 path add "~/.local/bin"
+path add "~/npm/bin"
 
 $env.config.buffer_editor = 'nvim'
 
