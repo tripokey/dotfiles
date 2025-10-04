@@ -1,5 +1,7 @@
 use std "path add"
 
+hide-env PAGER
+
 path add "~/.local/bin"
 path add "~/npm/bin"
 
