@@ -15,6 +15,8 @@ alias ghcs = gh copilot suggest
 source $"($nu.home-path)/.cargo/env.nu"
 source ~/.cache/starship/init.nu
 source ~/.cache/carapace/init.nu
+source ~/.cache/jujutsu/init.nu
+source ~/.cache/mise/init.nu
 
 # $env.config.hooks.command_not_found = {
 #     |cmd_name| (
