@@ -5,6 +5,7 @@ hide-env PAGER
 path add "~/.local/bin"
 path add "~/npm/bin"
 
+$env.EDITOR = 'nvim'
 $env.config.buffer_editor = 'nvim'
 
 alias wezterm = flatpak run org.wezfurlong.wezterm
